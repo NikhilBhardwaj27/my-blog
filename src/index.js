@@ -88,7 +88,9 @@ app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname + '/build/index.html'))
 })
 
-// Listening on port number 8000
-app.listen(8000,()=>{
-    console.log("Server is running on port 8000")
-})
+
+app.set( 'port', ( process.env.PORT || 8000 ));
+// Start node server
+app.listen( app.get( 'port' ), function() {
+  console.log( 'Node server is running on port ' + app.get( 'port' ));
+  });
