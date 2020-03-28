@@ -5,7 +5,7 @@ import path from 'path'
 
 
 // Connecting to database
-const uri = "mongodb+srv://nikhil:*****@my-blog-mq1dk.mongodb.net/test?retryWrites=true&w=majority";
+const uri = "mongodb+srv://nikhil:pb02,5901@my-blog-mq1dk.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useUnifiedTopology: true }, { useNewUrlParser: true });
 
 // Using JSON Parser
