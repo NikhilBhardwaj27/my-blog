@@ -10,7 +10,7 @@ const client = new MongoClient(uri, { useUnifiedTopology: true }, { useNewUrlPar
 
 // Using JSON Parser
 const app = express();
-app.use(express.static(path.join(__dirname,'/build')));
+app.use(express.static(path.join(__dirname,'my-blog/build')));
 app.use(bodyParser.json())
 
 // Fethcing articles fom database
@@ -85,7 +85,7 @@ app.post('/api/articles/:name/add-comment',(req,res)=>{
 })
 
 app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname + '/build/index.html'))
+    res.sendFile(path.join(__dirname + 'my-blog/build/index.html'))
 })
 
 
