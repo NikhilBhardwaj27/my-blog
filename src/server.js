@@ -1,7 +1,7 @@
-import express from 'express';
-import bodyParser from 'body-parser';
+const  express =  require('express');
+const bodyParser  =  ('body-parser');
 const MongoClient = require('mongodb').MongoClient;
-import path from 'path'
+const path  =  require('path');
 
 
 // Connecting to database
