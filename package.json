@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Backend for mhy blog app",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "npx nodemon --exec npx babel-node src/index.js",
+    "start": "npx nodemon --exec npx babel-node src/server.js",
     "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix my-blog && npm run build --prefix my-blog",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

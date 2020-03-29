@@ -10,7 +10,7 @@ const client = new MongoClient(uri, { useUnifiedTopology: true }, { useNewUrlPar
 
 // Using JSON Parser
 const app = express();
-app.use(express.static(path.join(__dirname,'my-blog/build')));
+//app.use(express.static(path.join(__dirname,'my-blog/build')));
 app.use(bodyParser.json())
 
 // Fethcing articles fom database
@@ -84,9 +84,19 @@ app.post('/api/articles/:name/add-comment',(req,res)=>{
     })
 })
 
-app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname + 'my-blog/build/index.html'))
-})
+// app.get('*',(req,res)=>{
+//     res.sendFile(path.join(__dirname + 'my-blog/build/index.html'))
+// })
+
+//Serve static files if in production
+if(process.env.NODE_ENV === 'production'){
+    //Set static folder
+    app.use(express.static('my-blog/build'))
+
+    app.get('*',(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'my-blog','build','index.html'))
+    })
+}
 
 
 app.set( 'port', ( process.env.PORT || 8000 ));
