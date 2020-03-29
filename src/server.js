@@ -1,5 +1,5 @@
 const  express =  require('express');
-const bodyParser  =  ('body-parser');
+const bodyParser  =  require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const path  =  require('path');
 
