@@ -4,7 +4,7 @@
   "description": "Backend for mhy blog app",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon src/server.js",
+    "start": "node src/server.js",
     "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix my-blog && npm run build --prefix my-blog",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
