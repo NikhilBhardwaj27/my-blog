@@ -88,6 +88,11 @@ app.post('/api/articles/:name/add-comment',(req,res)=>{
 //     res.sendFile(path.join(__dirname + 'my-blog/build/index.html'))
 // })
 
+app.use(express.static('my-blog/build'))
+
+app.get('*',(req,res)=>{
+    res.sendFile(path.resolve(__dirname,'my-blog','build','index.html'))
+})
 //Serve static files if in production
 if(process.env.NODE_ENV === 'production'){
     //Set static folder
